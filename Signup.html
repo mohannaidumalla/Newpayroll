@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.belrium.io/lib/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- Navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a class="navbar-brand">
+          <a href="Home.html"><img src="https://www.belrium.io/lib/img/logo.png" alt="Belrium logo"></a>
+        </a>
+        
+
+</nav>
+</div><br><br><br>
+
+  
+<!--Body-->
+<body style="background-color:#ffffff">  
+        <div class="container-fluid" >
+            
+                <div class="col-sm-5" style="float:right">
+                    <form name="myform2">
+                      <fieldset>
+                        <div class="well clearfix">
+                          <div class="form group">
+                            <h3> <b>Enter your details</b> </h3>
+                            First Name: <input type="text"  name="fname" id="firstname" class="form-control" placeholder="first name" minlength="0" maxlength="20" pattern="[a-zA-Z ]{4,}" required="required"/>
+                            Last Name: <input type="text" name="lname" id="lastname" class="form-control" placeholder="last name" minlength="0" maxlength="20" required="required"/>
+                            Email: <input type="email" name="email" id="email" class="form-control" placeholder="email" minlength="0" maxlength="30" required="required"/>
+                            Password: <input type="password"  name="pass1" id="password"  class="form-control col-md-8" placeholder="password"  minlength="0" maxlength="20" required="required"/><br>
+                            Confirm Password: <input type="password" name="pass2" id="confirmpassword"  class="form-control" placeholder="confirm password"  minlength="0" maxlength="20" required="required"/>
+                            Select Country:
+                            <select value="IN" data-code-mode="alpha2" data-role="country-selector" class="form-control"></select>
+                            <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select
+                                <span class="caret"></span></button>
+                                  <ul class="dropdown-menu" >
+                                    <li>Employee</li>
+                                    <li><a href="#">Employer</a></li>
+                                  </ul>
+                            </div>
+                            <button type="submit" class="btn btn-primary col-md-12" id="register" value="register"> Sign Up </button><br>
+                            <p>Already have an account?<span style="float:right"><a href="Login.html"> Login</a></span></p>
+                          </div>
+                        </div>  
+                      </fieldset>
+                    </form>
+                    </div>
+</div>
+<!--end of body-->
+
+
+<!--Collapse Side Pannel Script-->
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+<!--end of script-->
+<script src="js/jquery.countrySelector.js"> </script>
+</body>
+
+
+<!-- Footer -->
+<div class="footer">
+    <p> Copyright @2018 Belrium. All rights reserved</p>
+</div>
+<!-- End of footer-->
+</html>

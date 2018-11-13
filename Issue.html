@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>https://www.belrium.io/lib/img/logo.png
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.belrium.io/lib/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <!--pdf Javascript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  <!--end pdf javascript-->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- Navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a class="navbar-brand">
+          <a href="Home.html"><img src="https://www.belrium.io/lib/img/logo.png" alt="Belrium logo"></a>
+        </a>
+        
+<div id="mySidebar" class="sidebar"> 
+  <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">×</a>
+  <a href="Wallet1.html">Wallet </a>
+  <a href="KYCDashboard.html">KYC</a>
+  <a href="Dashboard.html">Dashboard</a>
+  <a href="Logout.html">Logout</a>
+</div>
+</nav>
+</div><br><br><br>
+
+<!--Body-->
+<body style="background-color:#ffffff">  
+  <div class="container-fluid" >
+      <div id="main pull-right">
+          <button class="openbtn" onclick="openNav()">☰ </button>  
+      </div>
+        <div class="col-md-6">
+          <form form-horizontal>
+            <div class="well clearfix">
+              <div class="form-group">
+<h3><b> ISSUE CERTIFICATE</b></h3><br>
+        <div class="form-group">
+        <h4><b>PERSONAL DETAILS</b></h4>
+        <label class="control-label col-sm-3" for="">EMPNAME:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="txtempname" placeholder="Employee Name" onclick="functionName('txtempname','disp_empname')">
+        </div>
+        <label class="control-label col-sm-3" for="">MONTH:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="txtmonth" placeholder="Month" onclick="functionName('txtmonth','disp_month')">
+        </div>
+        <label class="control-label col-sm-3" for="">YEAR:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="txtyear" placeholder="Year" onclick="functionName('txtyear','disp_year')">
+      </div>
+      <label class="control-label col-sm-3" for="">EMAIL:</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control" id="txtemail" placeholder="Email" onclick="functionName('txtemail','disp_email')">
+      </div>
+    
+  </div>
+
+<div class="form-group">
+  <h4><b>EMPLOYEE DETAILS</b></h4>
+      <label class="control-label col-sm-3" for="">EMPLOYEEID:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="txtemployeeid" placeholder="EmployeeID" onclick="functionName('txtemployeeid','disp_employeeid')">
+      </div>
+      <label class="control-label col-sm-3" for="">DESIGNATION:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="txtdesignation" placeholder="Designation" onclick="functionName('txtdesignation','disp_designation')">
+      </div>
+      <label class="control-label col-sm-3" for="">PAN:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="txtpan" placeholder="PAN Card Number" onclick="functionName('txtpan','disp_pan')">
+    </div>
+  </div>
+
+  <div class="form-group">
+  <h4><b>PAYMENT DETAILS</b></h4>
+      <label class="control-label col-sm-3" for="">BANK NAME:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="txtbankname" placeholder="BANK NAME" onclick="functionName('txtbankname','disp_bankname')">
+      </div>
+      <label class="control-label col-sm-3" for="">A/C No:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="txtacno" placeholder="ACCOUNT NUMBER" onclick="functionName('txtacno','disp_acno')">
+      </div>
+      
+  </div>
+
+  <div class="form-group">
+      <h4><b>EARNINGS</b></h4>
+          <label class="control-label col-sm-3" for="">HRA:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="txthra" placeholder="HOUSE RENTAL ALOWANCE" onclick="functionName('txthra','disp_hra')">
+          </div>
+          <label class="control-label col-sm-3" for="">TA:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="txtta" placeholder="TRAVEL ALOWANCE" onclick="functionName('txtta','disp_ta')">
+          </div>
+          <label class="control-label col-sm-3" for="">MA:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="txtma" placeholder="MEDICAL ALLOWANCE" onclick="functionName('txtma','disp_ma')">
+          </div>
+          <label class="control-label col-sm-3" for="">BASIC SALARY:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="txtbs" placeholder="BASIC SALARY" onclick="functionName('txtbs','disp_bs')">
+          </div>
+
+          
+      </div>
+
+      <div class="form-group">
+          <h4><b>DEDUCTIONS</b></h4>
+              <label class="control-label col-sm-3" for="">PROVIDENTFUND:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="txtpf" placeholder="PROVIDENTFUND" onclick="functionName('txtpf','disp_pf')">
+              </div>
+              <label class="control-label col-sm-3" for="">PROFESSIONALTAX:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="txtpt" placeholder="PROFESSIONALTAX" onclick="functionName('txtpt','disp_pt')">
+              </div>
+              
+          </div>
+ 
+
+
+
+      <script>
+      function test(){
+              var DAPP_ID = '338bad04fc5afdffcdb98c00f6c1ecfbbe53af615bce1da4eaf14c23a331ba06';
+              //  window.location.pathname.split('/')[2];
+               
+        //      console.log("DAPP_ID: "+DAPP_ID);
+      //         var DAPP_ID = window.location.pathname.split('/')[2];
+             // var BASE_URL = '/api/dapps/' + DAPP_ID;
+             var BASE_URL = 'http://localhost:9305/api/dapps/' + DAPP_ID;
+      
+      //ddress,name,id,university,coursename,date,certid
+              var empname = document.getElementById("txtempname").value;
+              var month = document.getElementById("txtmonth").value;
+              var year = document.getElementById("txtyear").value;
+              var email = document.getElementById("txtemail").value;
+              var employeeid = document.getElementById("txtemployeeid").value;
+              var designation = document.getElementById("txtdesignation").value;
+              var pan = document.getElementById("txtpan").value;
+              var bankname = document.getElementById("txtbankname").value;
+              var accno = document.getElementById("txtaccno").value;
+              var hra = document.getElementById("txthra").value;
+              var ta = document.getElementById("txtta").value;
+              var medicalallowance = document.getElementById("txtma").value;
+              var basicsalary = document.getElementById("txtbasicsalary").value;
+              var pf = document.getElementById("txtpf").value;
+              var professionaltax = document.getElementById("txtprofessionaltax").value;
+
+
+
+
+
+              
+      
+               //  var secode=window.prompt("Secret Code");
+              
+              // console.log("secret code: "+secode);
+              // var fee = '10000000';
+              // console.log("email   :"+email);
+              // var args = JSON.stringify([name,employeeid,payscale]);
+              // console.log("args   :"+args);
+      
+              var data = {
+                    secret: secret,
+                    fee: fee,
+                    type: 1000, 
+                    //              args: JSON.stringify([name,course1,university,DOI1])
+                    args: JSON.parse([name,employeeid])
+                  
+                  }
+           $.ajax({
+                    type: 'PUT',
+                    url: BASE_URL + '/transactions/unsigned',
+                    data: data,
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                    }});
+      //alert("test" + id);
+      }
+      
+      /*function studentname(){
+        $('#txtstudent').keyup(function () {
+        $('#display').text($(this).val());
+      });
+      }*/
+      
+      function functionName(inputID, displayID){
+        $('#'+inputID).keyup(function () {
+        $('#'+displayID).text($(this).val());
+      });
+      }
+      
+       function ShowData() {
+                       $.ajax({
+                    type: 'GET',
+                    url: BASE_URL + '/payroll/:Issue',
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                        displaycertificate(ret);
+                        console.log(ret);
+                      }
+                  });
+      
+                  }
+      
+      function displaycertificate(ret){
+            // rgs: JSON.stringify(email,employeeid,name,designation,actualsalary,month,year,lossofpay,pendingamt,ptdeduction,tdsdeduction,Reimbursment)
+              var tblRow = "<tr>"  + "<td>" + ret.name + "</td>" + "<td>" + ret.employeeid + "</td>" + "</tr>";
+                 $(tblRow).appendTo("#employeedata tbody");
+           }
+      
+      </script>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+
+          <img src="https://www.belrium.io/lib/img/logo.png" alt="Belrium logo" style="float:left">
+          <div style="width:500px; height:550px; padding:20px; text-align:center; border: 1px solid #000000" style="float:center">
+            <p><b><span style="float:center" id="disp_month"></span></b><b><span style="float:center" id="disp_year"></span></b>
+              <b><span style="float:center"> Payslip</span></b><b><span style="float:right">Belfrics Cryptex</span></b> </p>  
+            
+          
+          <p style="float:right"><b>Address:</b></p><br>
+                   <br>
+                               
+                  <div style="width: 100%">    
+                      <div style="width: 50%; float:left ">
+                        <div> EMPLOYEE ID: <span id=disp_employeeid></span></div>
+                      </div>
+
+                      <div style="width: 50%; float:right">
+                          <div> EMPNAME: <span id=disp_empname></span></div>
+                      </div>
+                  </div><br>
+  
+                   <div style="width: 100%">    
+                      <div style="width: 50%; float:left ">
+                          <div> BANK NAME: <span id=disp_bankname></span></div>
+                        </div> 
+
+                        <div style="width: 50%; float:right ">
+                            <div> DESIGNATION: <span id=disp_designation></span> </div>
+                        </div>
+                  </div>
+
+                  <div style="width: 100%">
+                      <div style="width: 50%; float:left ">
+                          <div> A/C NO: <span id=disp_acno></span> </div>
+                        </div>
+
+                      <div style="width: 50%; float:right ">
+                          <div> PAN: <span id=disp_pan></span> </div>
+                        </div>
+                  </div>
+
+                   <!--Certificate Table-->
+                   <table class="table table-bordered table-striped" style="float:left">
+        
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">FIELDS</th>
+                            <th>AMOUNT</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BASIC SALARY</td>
+                            <td>
+                              <span id=disp_bs></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HRA</td>
+                            <td> <span id=disp_hra></span></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>TA</td>
+                            <td><span id="disp_ta"></span></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>MA</td>
+                            <td><span id="disp_ma"></span></td>
+                           
+                        </tr>
+                        <tr>
+                            <td><b>GROSS SALARY</b></td>
+                            <td><span id="disp_grosssalary"></span></td>
+                            
+                        </tr>
+                        <tr>
+                          <td>PF</td>
+                          <td><span id="disp_pf"></span></td>
+                         
+                      </tr>
+                      <tr>
+                        <td>PROFESSIONAL TAX</td>
+                        <td><span id="disp_pt"></span></td>
+                       
+                    </tr>
+                    <tr>
+                      <td><b>TOTAL DEDUCTION</b></td>
+                      <td><span id="disp_td"></span></td>
+                     
+                    </tr>
+                    <tr>
+                      <td><b>NET SALARY</b></td>
+                      <td><span id="disp_netsalary"></span></td>
+                     
+                    </tr>
+
+                      </tbody>
+                    </table>
+                 <!--End of Certificate Table-->
+          
+                  
+                  
+<!-------------                  
+                  <div style="width: 100%">
+                      
+                      <div style="width: 50%; float:left ">
+                        <div>BASIC SALARY :<span id=disp_bs></span> </div>
+                      </div>
+                      <div style="width: 50%; float:right ">
+                          <div>PF :<span id=disp_pf></span> </div>
+                      </div>
+                  </div><br>
+
+                      <div style="width: 100%">   
+                        <div style="width: 50%; float:left ">
+                            <div>HRA :<span id=disp_hra></span> </div>
+                        </div>
+                        <div style="width: 50%; float:right">
+                            <div> PROFESSIONAL TAX:<span id=disp_pt></span> </div>
+                        </div>
+                        
+                      </div>
+
+                      <div style="width: 100%">
+                        <div style="width: 50%; float:left ">
+                          <div> TA: <span id=disp_ta></span> </div>
+                        </div>
+                      
+                        
+                      </div>
+
+                      <div style="width: 100%">
+                          <div style="width: 50%; float:left ">
+                              <div> MEDICAL ALLOWANCE:<span id=disp_ma></span> </div>
+                            </div>
+                      </div>
+
+
+                      <div style="width: 100%">    
+                        <div style="width: 50%; float:left ">
+                          <div><b>GROSS SALARY :</b>  <span id=disp_grosssalary></span></div>
+                        </div>
+
+                        <div style="width: 50%; float:left ">
+                          <div><b>TOTAL DEDUCTION :</b> <span id=disp_totaldeduction></span></div>
+                        </div>
+                      </div>
+
+
+                    <div style="width: 100%">    
+                      <div style="width: 100%; float:right ">
+                        <div><b>NET SALARYY :</b><span id=disp_netsalary></span> </div>
+                      </div>
+                    </div>
+-->
+                  
+            </div>
+            </div>
+            </div>
+            <div class="container">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn" data-toggle="modal" data-target="#myModal">Issue Cert</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <p> Are you sure want to issue this certificate</p><br>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data="modal">Issue</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+
+            <br>
+            
+            
+            <!-- <script language="javascript">
+      
+          function  postData(){
+      //alert("hi");
+              var DAPP_ID = window.location.pathname.split('/')[2];
+              console.log("DAPP_ID: "+DAPP_ID);
+              var BASE_URL = '/api/dapps/' + DAPP_ID;
+              var date1   = document.getElementById("txtdate").value;
+              var id    = document.getElementById("txtstudent").value;
+              var course1 = document.getElementById("txtcourse").value;
+              var university = document.getElementById("txtuniversity").value;
+              var DOI1    = document.getElementById("txtDOI").value;
+              var secret  = document.getElementById("txtsecret").value;
+              var inst1   = document.getElementById("txtinst").value;
+              var EID1   = document.getElementById("txtEID").value;
+            //var args = $('#contractArgs').val().split('\n')
+            //"args": "[\"abcdj\",\"ridd\",\"widd\",\"sidd\",\"didd\"]",
+      //      recipientAddress, name, enrollmentId, major, institute
+                var fee = '10000000';
+                var data = {
+                    secret: secret,
+                    fee: fee,
+                    type: 1000, 
+      //              args: JSON.stringify(date1,id,course1,university,DOI1)
+                    args: JSON.stringify(date1,id,course1,university,EID1)
+      
+                  }
+                console.log('invoke', data)
+                $.ajax({
+                    type: 'PUT',
+                    url: BASE_URL + '/transactions/unsigned',
+                    data: data,
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                    }});
+      
+          }
+      
+            //  var EID2   = document.getElementById("txtEID").value;
+           var EID2 =  "1" ;
+         
+           function Verify(ret){
+              <p> University details </p>
+             var tblRow = "<tr>" + "<td>" + ret.date1 + "</td>" +
+                 "<td>" + ret.id + "</td>" + "<td>" + ret.course1 + "</td>" + "<td>" + ret.university + "</td>" + "</tr>"
+      
+                 $(tblRow).appendTo("#userdata tbody");
+           }
+      
+      //get the unersity
+      
+           }
+      
+      
+      
+        </script> -->
+<!-- Navigation Script -->
+        <script>
+          function openNav() {
+              document.getElementById("mySidebar").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          function closeNav() {
+              document.getElementById("mySidebar").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+          }
+          </script>
+<!-- End of the Navigation Script -->
+
+
+      
+      
+        <script src="js/jspdf.js"></script>
+        <script src="js/jquery-2.1.3.js"></script>
+        <script src="js/pdfFromHTML.js"></script>
+        <script src="js/bindDatePicker.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<div class="footer">
+  <p> Copyright @2018 Belrium. All rights reserved</p>
+</div>
+<!-- End of footer-->
+</html>
+<a href="Home.html">

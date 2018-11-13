@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.belrium.io/lib/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- Navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a class="navbar-brand">
+            <a href="Home.html"><img src="https://www.belrium.io/lib/img/logo.png" alt="Belrium logo"></a>
+        </a>
+        
+<div id="mySidebar" class="sidebar"> 
+  <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">×</a>
+  
+  <a href="Wallet1.html"> Wallet </a>
+  <a href="KYCDashboard.html">KYC</a>
+  <a href="Issue.html">Issue</a>
+  <a href="Logout.html">Logout</a>
+  
+</div>
+</nav>
+</div><br><br><br>
+
+  
+
+<!--Body-->
+
+        <div id="main pull-right">
+            <button class="openbtn" onclick="openNav()">☰ </button>  
+        
+<!--Table-->
+<body style="background-color:#ffffff">  
+    <div class="container-fluid" >
+<div class="bs-example col-md-10" style="float:right" >
+    <table class="table table-bordered table-striped" style="float:right" id="employee_table"> 
+            <tr>
+                <th>Employee ID <span id="employeeid"></span></th>
+                <th>Employee Name <span id="employeename"></span></th>
+                <th>Designation <span id="designation"></span></th>
+                <th>Month <span id="month"> </span></th>
+                <th>Status <span id="status"></span></th>
+            </tr>
+            <!-----
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                        
+                <td>
+                  <button type="button" class="btn btn-success" onclick="displayissue()">Issue  </button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="displayissue()">Issue</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary" >Issued</button>
+                </td>
+            </tr>
+                 ------->  
+    </table>
+
+<!--End of table-->
+
+
+  </div>    
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<!-- Navigation Script -->
+        <script>
+          function openNav() {
+              document.getElementById("mySidebar").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          function closeNav() {
+              document.getElementById("mySidebar").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+          }
+          </script>
+<!-- End of the Navigation Script -->
+
+<!--Onclick script-->
+<script>
+    function displayissue() {
+        window.open("Issue.html");
+    }
+</script>
+<!--end of Onclick script-->
+
+<!--Table data script-->
+<script>
+$(document).ready(function(){
+    $.get("http://54.251.138.1:9305/api/dapps/338bad04fc5afdffcdb98c00f6c1ecfbbe53af615bce1da4eaf14c23a331ba06/employees",function(data){
+        var employee_data='';
+        var i = 0;
+        $.each(data,function(key,value){
+            employee_data += '<tr>';
+            employee_data += "<td id = 'empid" + i + "'>"+value.empID+"</td>";
+            employee_data += '<td>'+value.name+'</td>';
+            employee_data += '<td>'+value.designation+'</td>';
+            employee_data += '<td>Month</td>';
+            employee_data += '<td>Status</td>';
+            employee_data += '</tr>';
+        });
+        $('#employee_table').append(employee_data);
+    });
+    
+});
+
+</script>
+<!--End of Table data script-->
+<!--Datepicker javascript-->
+
+<!--Datepicker javascript-->
+<!--Month picker-->
+<!--end for Date picker-->
+      
+        <script src="js/jspdf.js"></script>
+        <script src="js/pdfFromHTML.js"></script>
+        <script src="js/bindDatePicker.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<div class="footer">
+    <p> Copyright @2018 Belrium. All rights reserved</p>
+</div>
+<!-- End of footer-->
+</html>
